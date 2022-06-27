@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cal-body">
+        <form action=""> 
+            <input type="text" name="display" class="display" id="display-show"><br>
+                <div class="container">
+                    <input type="button" value="7"  onclick="answer('7')">
+                    <input type="button" value="8"  onclick="answer('8')">
+                    <input type="button" value="9"  onclick="answer('9')">
+                    <input type="button" value="+"  onclick="answer('+')"><br>
+
+                    <input type="button" value="4"  onclick="answer('4')">
+                    <input type="button" value="5"  onclick="answer('5')">
+                    <input type="button" value="6"  onclick="answer('6')">
+                    <input type="button" value="-"  onclick="answer('-')"><br>
+
+                    <input type="button" value="1"  onclick="answer('1')">
+                    <input type="button" value="2"  onclick="answer('2')">
+                    <input type="button" value="3"  onclick="answer('3')">
+                    <input type="button" value="*"  onclick="answer('*')"><br>
+
+                    <td><input type="button" value="0"  onclick="answer('0')">
+                    <td><input type="button" value="."  onclick="answer('.')">
+                    <td><input type="button" value="/"  onclick="answer('/')">
+                    <td><input type="button" value="c"  onclick="del()"><br>
+
+                    <input type="button" value="=" class="total" onclick="total()">
+                </div>    
+            </form>
+    </div>
+<!-- js codes -->
+    <script>
+        
+        function answer(data){
+            document.getElementById("display-show").value += data;
+        }
+        function del (){
+            document.getElementById("display-show").value='';
+        }
+        function total(){
+         let a = document.getElementById("display-show").value
+         let b = eval(a);
+         document.getElementById("display-show").value = b;
+        }
+    </script>
+</body>
+</html>
